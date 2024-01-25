@@ -33,11 +33,11 @@
 									<li class="active"><a href="{%url 'travelapp:demo' %}">Home</a></li>
 									<li><a href="">About us</a></li>
 									{%if user.is_authenticated %}
-									<li><a href="credentials/logout">LOGOUT</a></li>
+									<li><a href={% url 'credentials:logout' %}">LOGOUT</a></li>
 
 									{%else%}
 									<li><a href="{%url 'credentials:login' %}">LOGIN</a></li>
-									<li><a href="credentials/register">REGISTER</a></li>
+									<li><a href="{% url 'credentials:register' %}">REGISTER</a></li>
 									{%endif%}
 								</ul>
 							</nav>
