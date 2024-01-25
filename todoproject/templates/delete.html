@@ -1,0 +1,8 @@
+{%extends 'base.html' %}
+{%block content%}
+<form method="POST" action="">
+    {%csrf_token%}
+    ARE YOU SURE YOU DONE THIS TASK? - {{task.id}}
+    <input type="submit">
+</form>
+{%endblock%}
