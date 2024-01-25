@@ -1,0 +1,98 @@
+/***navigation***/
+.nav-item{
+    letter-spacing:.2em;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.dropdown-item{
+    letter-spacing:.2em;
+    font-size:14px;
+    text-transform:uppercase;
+}
+
+/***heading***/
+h3 {
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+h4 {
+    letter-spacing:.1em;
+    font-size:12px;
+    text-transform:uppercase;
+
+}
+h1, p {
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+/**footer**/
+.my_footer {
+    background-color:#f8f9fa;
+    height:30px;
+}
+.my_footer p{
+    padding-top:5px;
+    text-align:center;
+    text-size:8px;
+}
+/**body8**/
+body{
+    font-size:10px;
+}
+/**banner**/
+.banner{
+    background-color:green;
+    width: 100%;
+    height: 25vh;
+    text-align:center;
+}
+.banner span{
+    color:white;font-size:36px;position: relative;top: 30%;
+}
+
+.bannerprod{
+    background-color:green;
+    width: 100%;
+    height: 25vh;
+
+}
+.bannerprod span{
+    text-align:center;
+    color:white;font-size:36px;position: relative;top: 30%;
+}
+.bannerprod img{
+    height:100%;padding:15px;
+}
+.bannerprod h1{
+    color:white;text-align:center;font-size:36px;position: relative;bottom: 80%;
+}
+.bannerprod p{
+    text-align:center;position: relative;bottom: 80%;
+}
+.marginb{
+    margin-bottom:10px;
+}
+.custom_table{
+    min-width:400px;
+    font-size:14px;
+}
+.my_custom_thead{
+    font-weight:normal;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#f9faf8!important;
+}
+.custom_a{
+    text-decoration:none;
+}
+.custom_icon{
+    text-decoration:none;
+    color:#868e96 !important
+}
+.my_custom_button{
+    margin-top:5px;
+}
+.custom_a{
+    color:black;
+}

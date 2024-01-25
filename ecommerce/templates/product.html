@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block metadescription%}
+
+        {{product.description|truncatewords:155}}
+
+{% endblock%}
+
+{%block title%}
+
+        {{product.name}} - DUBAI FOODS
+
+{% endblock%}
+
+{%block content%}
+
+<div>
+    <div>
+        <p><a href="{%url 'shop:allProdCat'%}">HOME</a>|<a href="{{product.category.get_url}}">{{product.category}}</a>|{{product.name}}</p>
+    </div>
+</div>
+<br>
+<div class="container" style="text-align:justify">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <img src="{{product.image.url}}" alt="{{product.name}}" width="400px">
+            </div>
+        </div>
+
+        <div class="col-md-6" style="padding-top:10px;padding-bottom:30px;padding-left:20px;">
+            <h1>{{product.name}}</h1>
+            <h3>Product Description</h3>
+
+            <h4>{{product.description}}</h4>
+            <h3>AED {{product.price}}</h3>
+            {% if product.stock <= 0 %}
+            <p class="btn btn-danger"><b>OUT OF STOCK</b></p>
+            {%else%}
+            <a href="{%url 'cart:add_cart' product.id %}" class="btn btn-secondary">ADD TO CART</a>
+            {%endif%}
+        </div>
+    </div>
+</div>
+{%endblock%}

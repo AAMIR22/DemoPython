@@ -1,0 +1,37 @@
+{%extends 'base.html' %}
+{%load static%}
+{%block metadescription %}
+        WELCOME TO DUBAI FOODS WHERE CAN YOU BUY DIFFERENT ITEMS
+
+{% endblock%}
+{%block content%}
+<div>
+    <p class="text-center">YOU HAVE SEARCHED FOR : <b>"{{query}}"</b></p>
+    <div class="container">
+        <div class="row mx-auto">
+            {%for product in products%}
+            <div class="marginb col-9 col-sm-12 col-md-4 col-lg-3">
+                <div class="card text-center">
+
+
+                    <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top" height="200px"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <p class="card-text">AED <b>{{product.price}}</b></p>
+                    </div>
+                    <div class="card-body">
+                        <a href="#" class="card-link">ADD TO CART</a>
+                        <a href="#" class="card-link">BUY</a>
+                      </div>
+
+                </div>
+            </div>
+            {% empty %}
+            <div class="mx-auto">
+                <p class="text-center">
+                    NO RESULTS FOUND
+                </p>
+            </div>
+            {%endfor%}
+
+{% endblock %}

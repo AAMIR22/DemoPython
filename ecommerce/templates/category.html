@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block metadescription%}
+    {%if category %}
+        {{category.description|truncatewords:155}}
+    {%else%}
+        WELCOME TO DUBAI FOODS WHERE CAN YOU BUY DIFFERENT ITEMS
+    {%endif%}
+{% endblock%}
+
+{%block title%}
+    {%if category %}
+        {{category.name}} - DUBAI FOODS
+    {%else%}
+        See our new collections - DUBAI FOODS
+    {%endif%}
+{% endblock%}
+
+{%block content%}
+    {%if category%}
+        <div class="mx-auto bannerprod" >
+                <img src="{{category.image.url}}" alt="{{category.name}}">
+                <h1>{{category.name}}</h1>
+                <p>{{category.description}}</p>
+        </div>
+        <br><h4>
+                Our {{category.name|lower}} products<hr>
+        </h4>
+
+    {%else%}
+        <div class="banner"">
+            <span>EXPLORE OUR SHOP</span>
+            <!--<img src="{%static 'img/banner.png' %}" width="100%">-->
+        </div>
+        <br>
+        <div>
+            <h1>
+                OUR PRODUCTS
+            </h1>
+            <p>Here you can explore various products that we provide</p>
+        </div>
+    {%endif%}
+<BR>
+    <div class="container">
+        <div class="row mx-auto">
+            {%for product in products.object_list%}
+            <div class="marginb col-9 col-sm-12 col-md-4 col-lg-3">
+                <div class="card text-center">
+
+
+                    <a href="{{product.get_url}}"><img src="{{product.image.url}}" alt="{{product.name}}" class="card-img-top" height="200px"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <p class="card-text">AED <b>{{product.price}}</b></p>
+                    </div>
+                    <div class="card-body">
+                        <a href="{%url 'cart:add_cart' product.id%}" class="card-link">ADD TO CART</a>
+                    <a href="#" class="card-link">BUY</a>
+                      </div>
+
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="mx-auto">
+            {%if products.paginator.num_pages > 1 %}
+
+            <hr>
+            <div>
+                {%for pg in products.paginator.page_range %}
+                <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.num == pg %} active {% endif %}">{{pg}}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{%endblock%}
