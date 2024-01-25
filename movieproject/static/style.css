@@ -1,0 +1,8 @@
+body {
+background-color:black;
+color:white;
+}
+.movies {
+float:left;
+margin:100px 100px;
+}
